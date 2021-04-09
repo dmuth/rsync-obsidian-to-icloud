@@ -57,7 +57,7 @@ do
 	#
 	for J in $(seq ${NUM_FILES_AND_DIRS})
 	do
-		mkdir -p ${DIR}/${I}/${J}
+		mkdir -p ${DIR}/${I}/${J}-empty-subdir
 		
 		TARGET="${DIR}/${I}/file-${J}.md"
 		echo "Test content: ${I}: ${J}" > ${TARGET}
