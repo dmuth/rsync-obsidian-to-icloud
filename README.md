@@ -1,5 +1,7 @@
 
 
+<img src="./img/obsidian-logo.png" align="right" width="250" />
+
 
 ## Testing instructions
 
