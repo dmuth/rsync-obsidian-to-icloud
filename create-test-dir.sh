@@ -46,10 +46,10 @@ do
 	#
 	# Make a file in this directory.
 	#
-	TARGET="${DIR}/file-${I}.txt"
+	TARGET="${DIR}/file-${I}.md"
 	if test ! -f "${TARGET}"
 	then
-		echo "Test content" > ${TARGET}
+		echo "Test content: ${I}" > ${TARGET}
 	fi
 
 	#
@@ -59,8 +59,8 @@ do
 	do
 		mkdir -p ${DIR}/${I}/${J}
 		
-		TARGET="${DIR}/${I}/file-${J}.txt"
-		echo "Test content" > ${TARGET}
+		TARGET="${DIR}/${I}/file-${J}.md"
+		echo "Test content: ${I}: ${J}" > ${TARGET}
 	done
 
 	#
