@@ -27,6 +27,8 @@ fi
 SRC=$1
 DEST=$2
 DEST_ICLOUD=""
+SRC_ORIG=$1
+DEST_ORIG=$2
 
 if test ! -d "${ICLOUD}"
 then
@@ -71,6 +73,14 @@ fi
 #
 SRC="${SRC}/"
 
+#
+# If source isn't an absolute path, make it one
+#
+if [[ "${SRC}" != "/"* ]]
+then
+	SRC="$(pwd)/${SRC}"
+fi
+
 echo "# "
 echo "# Starting sync..."
 echo "# "
@@ -80,5 +90,29 @@ echo "# "
 
 rsync -av --delete "${SRC}" "${DEST}"
 
+echo "# "
+echo "# Rsync complete!"
+
+#
+# Get filtered versions of our source and destination for the alias name
+#
+ALIAS_SRC=$(basename "${SRC}" | sed -e "s/[^A-Za-z0-9_]/_/g")
+ALIAS_DEST=$(basename "${DEST}" | sed -e "s/[^A-Za-z0-9_]/_/g")
+ALIAS_NAME="sync-to-icloud-from-${ALIAS_SRC}"
+
+
+#
+# Print instructions on how to set an alias to do this exact same sync for future use.
+#
+echo "# "
+echo "# To create an alias so that you can run this command in the future from your filesystem,"
+echo "#	put this in \$HOME/.bashrc:"
+echo "# "
+echo "# alias ${ALIAS_NAME}='$(pwd)/$0 \"${SRC}\" \"${DEST}\"'"
+echo "# "
+echo "# Yes, I know that's a long alias, but you can use tab-autocomplete for it. :-)"
+echo "# "
+
 echo "# Done!"
+
 
