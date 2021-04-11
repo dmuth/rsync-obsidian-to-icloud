@@ -23,6 +23,7 @@ These scripts to seek to address that.
 - Run the companion script: `./rsync-icloud-to-obsidian.sh VAULTNAME_IN_ICLOUD VAULTNAME`
 - This will sync down changes from iCloud to your local vault
 - Files that you deleted on iCloud will not be deleted from your local vault, to prevent accidental deletions.
+- At the completion of the script, a suggested alias will be printed so that future invocations of the script can be made no matter what directory you're in at the time.
 
 
 ## Caveats
