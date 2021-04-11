@@ -1,11 +1,12 @@
 
 ## Rsync Obsidian Vaults to iCloud
 
+<img src="./img/obsidian-logo.png" align="right" width="250" />
+
 The mobile app for <a href="https://obsidian.md/">Obsidian</a> for the iPhone
 can write Vaults to iCloud, but getting vaults from your Mac into iCloud can be tricky.
 These scripts to seek to address that.
 
-<img src="./img/obsidian-logo.png" align="right" width="250" />
 
 
 ## Usage
