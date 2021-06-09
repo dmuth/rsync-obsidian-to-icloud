@@ -11,9 +11,18 @@ These scripts to seek to address that.
 
 ## Usage
 
-### Getting your Vault into iCloud
+### Prerequisites
 
 - Make sure you've installed Obsidian on your iPhone FIRST, as it needs to set up an Obsidian directory in iCloud
+- Seriously, THIS IS MANDATORY.  If you have not installed Obsidian on your iPhone, STOP NOW and do that.
+- You can verify that Obsidian is on your iPhone because it will create a directory in your iCloud account. Here's how to view the contents of that directory on your Mac:
+   - `ls -l "Library/Mobile Documents/iCloud~md~obsidian/Documents/"`
+
+The reason for having Obsidian create the directory is that there is some metadata involved with the directory creation.  Therefore, creating the above mentioned directory yourself won't work.
+
+
+### Getting your Vault into iCloud
+
 - Next, run the script as follows: `./rsync-obsidian-to-icloud.sh ./VAULTNAME VAULTNAME_IN_ICLOUD`
 - The script will run `rsync` against the local directory that you specify and copy those files to the directory in the Obsidian directory in iCloud
 - At the completion of the script, a suggested alias will be printed so that future invocations of the script can be made no matter what directory you're in at the time.
