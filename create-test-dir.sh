@@ -33,7 +33,7 @@ then
 fi
 
 # Cleanup if we have an existing directory
-rm -rfv ${DIR}
+rm -rf ${DIR}
 
 #
 # Create a series of directories with files and directories under them.
@@ -62,6 +62,9 @@ do
 		TARGET="${DIR}/${I}/file-${J}.md"
 		echo "Test content: ${I}: ${J}" > ${TARGET}
 	done
+
+	# Create a fake zipfile as well
+	touch ${TARGET}.zip
 
 	#
 	# Make a symlink to the previous number.

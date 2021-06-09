@@ -88,7 +88,11 @@ echo "# Src: ${SRC}"
 echo "# Dest: ${DEST}"
 echo "# "
 
-rsync -av --delete "${SRC}" "${DEST}"
+#
+# Exclude syncing ZIP files because we already have them in Dropbox.
+#
+rsync -av --exclude '*zip' --delete "${SRC}" "${DEST}"
+
 
 echo "# "
 echo "# Rsync complete!"
